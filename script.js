@@ -7,9 +7,11 @@ import { Tile } from "./Tile.js";
 const canvas = document.getElementById("canvas");
 /** @param {CanvasRenderingContext2D} ctx */
 const ctx = canvas.getContext("2d");
+const scrWidth = document.documentElement.clientWidth;
 const scrHeight = document.documentElement.clientHeight;
-ctx.canvas.width= scrHeight;
-ctx.canvas.height= scrHeight;
+const canvasSize = scrWidth > scrHeight ? scrHeight : scrWidth;
+ctx.canvas.width= canvasSize;
+ctx.canvas.height= canvasSize;
 
 const DIM = 50;  // GRID SIZE
 
@@ -45,13 +47,13 @@ allTiles[randy()][randy()] = tileList[rando()];
 function draw() {
   // ### Draw the background ### //  
   ctx.fillStyle = "#000000";
-  ctx.fillRect(0, 0, scrHeight, scrHeight);
+  ctx.fillRect(0, 0, canvasSize, canvasSize);
 
   // ### Loop over the grid ### //
   for (let i = 0; i < DIM; i++) {
     for (let j = 0; j < DIM; j++) {
 
-      allTiles[j][i]?.drawTile(ctx, i * scrHeight/DIM, j * scrHeight/DIM, scrHeight/DIM, scrHeight/DIM); // draw the tiles
+      allTiles[j][i]?.drawTile(ctx, i * canvasSize/DIM, j * canvasSize/DIM, canvasSize/DIM, canvasSize/DIM); // draw the tiles
       if (allTiles[j][i] !== null) {
         allTiles[j][i]?.collapseWaveFunction(nextAllTiles, i, j, DIM, tileList);  // collapse the wavefunction around the tile
       }
