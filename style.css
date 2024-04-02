@@ -1,0 +1,48 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+  display: grid;
+  place-content: center;
+  background-color: #282830;
+  font-family: Calibri;
+}
+
+canvas {
+  display: block;
+}
+
+button {
+  position: absolute;
+  z-index: 1;
+  top: 2rem;
+  left: 2rem;
+  padding: 0.8rem;
+  font-size: 1.2rem;
+  background-color: #131317;
+  color: white;
+}
+
+a {
+  position: absolute;
+  z-index: 1;
+  top: 6rem;
+  left: 2rem;
+  padding: 0.8rem;
+  font-size: 1.2rem;
+  background-color: #131317;
+  color: lime;
+  text-decoration: none;
+}
+a:hover {
+  padding: 0.8rem;
+  font-size: 1.2rem;
+  background-color: white;
+  color: #131317;
+  text-decoration: none;
+  transform: scale(1.1);
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
